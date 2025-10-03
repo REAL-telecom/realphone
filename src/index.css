@@ -1,0 +1,322 @@
+/* ===== БАЗОВЫЕ СТИЛИ ===== */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  color: black;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: 'Inter', 'Avenir', 'Helvetica', 'Arial', sans-serif;
+  line-height: 1.5;
+  background-color: #f5f5f5;
+  font-synthesis: none;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-block-size: 100vh;
+  margin: 0;
+}
+
+/* ===== ТИПОГРАФИЯ ===== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== ССЫЛКИ ===== */
+
+a {
+  color: #0d6efd;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+  transition:
+    color 0.15s ease-in-out,
+    text-decoration-color 0.15s ease-in-out;
+}
+
+a:hover {
+  color: #0a58ca;
+  text-decoration-color: currentcolor;
+}
+
+a:focus {
+  text-decoration: none;
+  outline: none;
+  box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+}
+
+/* ===== ЛАЙАУТ-УТИЛИТЫ ===== */
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1rem;
+}
+
+/* ===== КАРТОЧКИ ===== */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  inline-size: fit-content;
+  max-inline-size: inherit;
+  padding: 1rem 1.5rem;
+  background-color: #fff;
+  border: 1px solid rgb(0 0 0 / 5%);
+  border-radius: 0.75rem;
+  box-shadow:
+    0 0.125rem 0.25rem rgb(0 0 0 / 5%),
+    0 0.5rem 1rem rgb(0 0 0 / 15%);
+}
+
+/* ===== КНОПКИ ===== */
+
+/* Обычная кнопка (белая) */
+
+button {
+  min-inline-size: 12.5rem;
+  padding: 0.625rem 1.25rem;
+  color: black;
+  font-weight: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+/* Обычная кнопка (неактивная) */
+
+button:disabled {
+  color: #6c757d;
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+/* Обычная кнопка (при наведении) */
+
+button:hover {
+  border-color: #0b5ed7;
+}
+
+/* Primary кнопка (синяя) */
+
+button.primary {
+  color: white;
+  background-color: #0d6efd;
+  border-color: transparent;
+}
+
+/* Primary кнопка (при наведении) */
+
+button.primary:hover {
+  background-color: #0b5ed7;
+}
+
+/* Primary кнопка (неактивная) */
+
+button.primary:disabled {
+  color: white;
+  background-color: #6ea8fe;
+  border-color: transparent;
+}
+
+/* ===== ФОРМЫ ===== */
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 0.75rem;
+  inline-size: inherit;
+  padding: 1.5rem;
+}
+
+fieldset {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+}
+
+label {
+  margin: 0.5rem;
+  vertical-align: middle;
+}
+
+input {
+  block-size: 2.5rem;
+  font-size: inherit;
+  background-color: #f5f5f5;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  transition: all 0.25s;
+}
+
+input:not([type='range']) {
+  padding: 0.5rem;
+}
+
+input:not([type='checkbox']),
+input:not([type='radio']) {
+  inline-size: 12.5rem;
+}
+
+input::placeholder {
+  color: grey;
+  opacity: 1;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  vertical-align: middle;
+}
+
+select {
+  inline-size: 12.5rem;
+  block-size: 2.5rem;
+  padding: 0.5rem;
+  font-size: inherit;
+  background-color: #f5f5f5;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+textarea {
+  inline-size: 100%;
+  min-block-size: 6rem;
+  line-height: 1.5;
+  border-radius: 0.5rem;
+  resize: vertical;
+}
+
+/* ===== КНОПКИ ФОРМ ===== */
+
+/* Submit кнопка (зеленая) */
+
+button.success,
+button[type='submit'] {
+  color: white;
+  background-color: #198754;
+  border-color: transparent;
+}
+
+/* Submit кнопка (неактивная) */
+
+button.success:disabled,
+button[type='submit']:disabled {
+  color: white;
+  background-color: #8fd19e;
+  border-color: transparent;
+}
+
+/* Submit кнопка (при наведении) */
+
+button.success:hover,
+button[type='submit']:hover {
+  background-color: #157347;
+}
+
+/* Reset/Cancel кнопка (красная) */
+
+button.cancel,
+button[type='reset'] {
+  color: white;
+  background-color: #dc3545;
+  border-color: transparent;
+}
+
+/* Reset/Cancel кнопка (неактивная) */
+
+button.cancel:disabled,
+button[type='reset']:disabled {
+  color: white;
+  background-color: #ea868f;
+  border-color: transparent;
+}
+
+/* Reset/Cancel кнопка (при наведении) */
+
+button.cancel:hover,
+button[type='reset']:hover {
+  background-color: #bb2d3b;
+}
+
+/* ===== ПОВЕДЕНИЕ ПРИ НАВЕДЕНИИ И ФОКУСЕ ===== */
+
+input:hover,
+select:hover,
+textarea:hover {
+  border-color: #0b5ed7;
+}
+
+button:focus,
+button:focus-visible,
+input:focus,
+input:focus-visible,
+select:focus,
+select:focus-visible,
+textarea:focus,
+textarea:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgb(0 0 0 / 10%);
+}
+
+/* ===== СПИСКИ ===== */
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ===== УТИЛИТЫ ===== */
+
+.ellipsis-heading {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
