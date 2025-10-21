@@ -1,0 +1,101 @@
+.app {
+  font-family: 'Arial', sans-serif;
+}
+
+.description {
+  margin-bottom: 20px;
+}
+
+.description ol {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.user-panel {
+  flex: 1;
+  min-width: 300px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.video-container {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.video-local {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 40%; /* Увеличили размер локального видео с 30% до 40% */
+  overflow: hidden;
+  border: 2px solid #fff;
+  border-radius: 4px;
+}
+
+.controls {
+  margin-top: 15px;
+}
+
+.controls-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Три колонки */
+  gap: 8px; /* Отступы между кнопками */
+  margin-bottom: 15px;
+}
+
+.controls-grid button {
+  width: 100%; /* Кнопки занимают всю ширину ячейки */
+  margin: 0; /* Убрали отступы */
+  padding: 8px 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.checkboxes {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.checkboxes label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+code {
+  padding: 2px 4px;
+  font-family: 'Courier New', monospace;
+  background-color: #f4f4f4;
+  border-radius: 3px;
+}
+
+@media (width <= 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .user-panel {
+    min-width: auto;
+  }
+
+  .controls-grid {
+    grid-template-columns: repeat(2, 1fr); /* Две колонки на мобильных */
+  }
+}
+
+@media (width <= 480px) {
+  .controls-grid {
+    grid-template-columns: 1fr; /* Одна колонка на очень маленьких экранах */
+  }
+}
