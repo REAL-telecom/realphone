@@ -10,4 +10,21 @@ export const uriBob = 'sip:4000' + '@' + domain;
 export const passwordBob = 'c2c661d3f8a4b06dad539e6469694dea';
 export const webSocketServerBob = 'wss://cityonline.real.su:8089/ws';
 
-// sip:2000@cityonline.real.su
+export const RTC_CONFIG = {
+  iceServers: [
+    // STUN сервер
+    { urls: 'stun:hosting4.astrakhan.ru:3478' },
+    // TURN UDP (основной)
+    {
+      urls: 'turn:hosting4.astrakhan.ru:3478?transport=udp',
+      username: 'test',
+      credential: 'tetest',
+    },
+    // TURN TCP (резервный)
+    {
+      urls: 'turn:hosting4.astrakhan.ru:3478?transport=tcp',
+      username: 'test',
+      credential: 'tetest',
+    },
+  ],
+};

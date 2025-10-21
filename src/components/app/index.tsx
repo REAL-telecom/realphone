@@ -10,6 +10,7 @@ import {
   uriBob,
   webSocketServerAlice,
   webSocketServerBob,
+  RTC_CONFIG,
 } from '@utils/sip.config.ts';
 
 import type React from 'react';
@@ -117,6 +118,13 @@ const App: React.FC = () => {
       userAgentOptions: {
         authorizationPassword: password,
         displayName,
+        sessionDescriptionHandlerFactoryOptions: {
+          peerConnectionConfiguration: RTC_CONFIG,
+          constraints: {
+            audio: true,
+            video: false,
+          },
+        },
       },
     };
 
@@ -211,8 +219,8 @@ const App: React.FC = () => {
   };
 
   const handleBeginAlice = () => {
-    const uri2000 = 'sip:2000@cityonline.real.su';
-    aliceControls.user?.call(uri2000).catch((error: Error) => {
+    // const uri2000 = 'sip:2000@cityonline.real.su';
+    aliceControls.user?.call(uriBob).catch((error: Error) => {
       console.error(`[${aliceControls.user?.id}] failed to begin session`);
       alert(`Failed to begin session.\n` + error);
     });
