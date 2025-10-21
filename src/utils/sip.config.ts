@@ -9,3 +9,5 @@ export const nameBob = '4000';
 export const uriBob = 'sip:4000' + '@' + domain;
 export const passwordBob = 'c2c661d3f8a4b06dad539e6469694dea';
 export const webSocketServerBob = 'wss://cityonline.real.su:8089/ws';
+
+// sip:2000@cityonline.real.su

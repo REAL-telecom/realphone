@@ -104,12 +104,13 @@ const App: React.FC = () => {
       media: {
         constraints: {
           audio: true,
-          video: true,
+          video: false,
         },
         local: {
           video: videoLocalElement,
         },
         remote: {
+          audio: videoRemoteElement,
           video: videoRemoteElement,
         },
       },
@@ -210,7 +211,8 @@ const App: React.FC = () => {
   };
 
   const handleBeginAlice = () => {
-    aliceControls.user?.call(uriBob).catch((error: Error) => {
+    const uri2000 = 'sip:2000@cityonline.real.su';
+    aliceControls.user?.call(uri2000).catch((error: Error) => {
       console.error(`[${aliceControls.user?.id}] failed to begin session`);
       alert(`Failed to begin session.\n` + error);
     });
