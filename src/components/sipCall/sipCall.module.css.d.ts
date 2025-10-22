@@ -1,0 +1,20 @@
+declare const classNames: {
+  readonly container: 'container';
+  readonly videoContainer: 'videoContainer';
+  readonly remoteVideo: 'remoteVideo';
+  readonly localVideo: 'localVideo';
+  readonly status: 'status';
+  readonly statusIndicator: 'statusIndicator';
+  readonly registered: 'registered';
+  readonly disconnected: 'disconnected';
+  readonly controls: 'controls';
+  readonly registration: 'registration';
+  readonly calling: 'calling';
+  readonly inputGroup: 'inputGroup';
+  readonly buttons: 'buttons';
+  readonly registerBtn: 'registerBtn';
+  readonly unregisterBtn: 'unregisterBtn';
+  readonly callBtn: 'callBtn';
+  readonly hangupBtn: 'hangupBtn';
+};
+export default classNames;
